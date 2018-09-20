@@ -1,0 +1,256 @@
+!SESSION 2018-09-20 09:51:26.681 -----------------------------------------------
+eclipse.buildId=4.4.1.Z20141128-1105
+java.version=1.8.0_25
+java.vendor=Oracle Corporation
+BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=fr_FR
+Command-line arguments:  -data /home/isha/leloup/workspace -os linux -ws gtk -arch x86_64
+
+!ENTRY org.tigris.subversion.subclipse.mylyn 4 0 2018-09-20 09:51:27.961
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.tigris.subversion.subclipse.mylyn [585]
+  Unresolved requirement: Require-Bundle: org.eclipse.mylyn.tasks.core; bundle-version="[3.0.0,4.0.0)"
+    -> Bundle-SymbolicName: org.eclipse.mylyn.tasks.core; bundle-version="3.18.0.v20151202-0115"; singleton:="true"
+       org.eclipse.mylyn.tasks.core [618]
+         No resolution report for the bundle.  Unresolved requirement: Require-Bundle: org.eclipse.mylyn.team.ui; bundle-version="[3.0.0,4.0.0)"
+    -> Bundle-SymbolicName: org.eclipse.mylyn.team.ui; bundle-version="3.18.0.v20151120-2228"; singleton:="true"
+       org.eclipse.mylyn.team.ui [623]
+         Unresolved requirement: Require-Bundle: org.eclipse.mylyn.tasks.core; bundle-version="[3.8.0,4.0.0)"
+           -> Bundle-SymbolicName: org.eclipse.mylyn.tasks.core; bundle-version="3.18.0.v20151202-0115"; singleton:="true"
+         Unresolved requirement: Require-Bundle: org.eclipse.mylyn.tasks.ui; bundle-version="[3.8.0,4.0.0)"
+           -> Bundle-SymbolicName: org.eclipse.mylyn.tasks.ui; bundle-version="3.18.0.v20151211-2235"; singleton:="true"
+              org.eclipse.mylyn.tasks.ui [622]
+                Unresolved requirement: Require-Bundle: org.eclipse.mylyn.tasks.core; bundle-version="3.8.0"
+                  -> Bundle-SymbolicName: org.eclipse.mylyn.tasks.core; bundle-version="3.18.0.v20151202-0115"; singleton:="true"
+  Unresolved requirement: Require-Bundle: org.eclipse.mylyn.tasks.ui; bundle-version="[3.0.0,4.0.0)"
+    -> Bundle-SymbolicName: org.eclipse.mylyn.tasks.ui; bundle-version="3.18.0.v20151211-2235"; singleton:="true"
+  Bundle was not resolved because of a uses contraint violation.
+  org.osgi.service.resolver.ResolutionException: Uses constraint violation. Unable to resolve resource org.eclipse.mylyn.tasks.core [osgi.identity; osgi.identity="org.eclipse.mylyn.tasks.core"; type="osgi.bundle"; version:Version="3.18.0.v20151202-0115"; singleton:="true"] because it is exposed to package 'javax.annotation' from resources org.eclipse.osgi [osgi.identity; osgi.identity="org.eclipse.osgi"; type="osgi.bundle"; version:Version="3.10.1.v20141128-1113"; singleton:="true"] and org.apache.geronimo.specs.geronimo-annotation_1.1_spec [osgi.identity; singleton="true"; osgi.identity="org.apache.geronimo.specs.geronimo-annotation_1.1_spec"; type="osgi.bundle"; version:Version="1.0.0"; singleton:="true"] via two dependency chains.
+
+Chain 1:
+  org.eclipse.mylyn.tasks.core [osgi.identity; osgi.identity="org.eclipse.mylyn.tasks.core"; type="osgi.bundle"; version:Version="3.18.0.v20151202-0115"; singleton:="true"]
+    require: (osgi.wiring.bundle=org.eclipse.core.runtime)
+     |
+    provide: osgi.wiring.bundle: org.eclipse.core.runtime
+  org.eclipse.osgi [osgi.identity; osgi.identity="org.eclipse.osgi"; type="osgi.bundle"; version:Version="3.10.1.v20141128-1113"; singleton:="true"]
+
+Chain 2:
+  org.eclipse.mylyn.tasks.core [osgi.identity; osgi.identity="org.eclipse.mylyn.tasks.core"; type="osgi.bundle"; version:Version="3.18.0.v20151202-0115"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=com.google.guava)(bundle-version>=15.0.0))
+     |
+    provide: osgi.wiring.bundle; bundle-version:Version="15.0.0.v201403281430"; osgi.wiring.bundle="com.google.guava"
+  com.google.guava [osgi.identity; osgi.identity="com.google.guava"; type="osgi.bundle"; version:Version="15.0.0.v201403281430"]
+    import: (osgi.wiring.package=javax.annotation)
+     |
+    export: osgi.wiring.package: javax.annotation
+  org.apache.geronimo.specs.geronimo-annotation_1.1_spec [osgi.identity; singleton="true"; osgi.identity="org.apache.geronimo.specs.geronimo-annotation_1.1_spec"; type="osgi.bundle"; version:Version="1.0.0"; singleton:="true"]
+	at org.eclipse.osgi.container.Module.start(Module.java:434)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1582)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1561)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1533)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1476)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:340)
+
+!ENTRY org.eclipse.egit.mylyn.ui 4 0 2018-09-20 09:51:28.048
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.egit.mylyn.ui [597]
+  Unresolved requirement: Require-Bundle: org.eclipse.mylyn.tasks.core; bundle-version="[3.0.0,4.0.0)"
+    -> Bundle-SymbolicName: org.eclipse.mylyn.tasks.core; bundle-version="3.18.0.v20151202-0115"; singleton:="true"
+       org.eclipse.mylyn.tasks.core [618]
+         No resolution report for the bundle.  Unresolved requirement: Require-Bundle: org.eclipse.mylyn.team.ui; bundle-version="[3.0.0,4.0.0)"
+    -> Bundle-SymbolicName: org.eclipse.mylyn.team.ui; bundle-version="3.18.0.v20151120-2228"; singleton:="true"
+       org.eclipse.mylyn.team.ui [623]
+         Unresolved requirement: Require-Bundle: org.eclipse.mylyn.tasks.core; bundle-version="[3.8.0,4.0.0)"
+           -> Bundle-SymbolicName: org.eclipse.mylyn.tasks.core; bundle-version="3.18.0.v20151202-0115"; singleton:="true"
+         Unresolved requirement: Require-Bundle: org.eclipse.mylyn.tasks.ui; bundle-version="[3.8.0,4.0.0)"
+           -> Bundle-SymbolicName: org.eclipse.mylyn.tasks.ui; bundle-version="3.18.0.v20151211-2235"; singleton:="true"
+              org.eclipse.mylyn.tasks.ui [622]
+                Unresolved requirement: Require-Bundle: org.eclipse.mylyn.tasks.core; bundle-version="3.8.0"
+                  -> Bundle-SymbolicName: org.eclipse.mylyn.tasks.core; bundle-version="3.18.0.v20151202-0115"; singleton:="true"
+  Unresolved requirement: Require-Bundle: org.eclipse.mylyn.tasks.ui; bundle-version="[3.0.0,4.0.0)"
+    -> Bundle-SymbolicName: org.eclipse.mylyn.tasks.ui; bundle-version="3.18.0.v20151211-2235"; singleton:="true"
+  Bundle was not resolved because of a uses contraint violation.
+  org.osgi.service.resolver.ResolutionException: Uses constraint violation. Unable to resolve resource org.eclipse.mylyn.tasks.core [osgi.identity; osgi.identity="org.eclipse.mylyn.tasks.core"; type="osgi.bundle"; version:Version="3.18.0.v20151202-0115"; singleton:="true"] because it is exposed to package 'javax.annotation' from resources org.eclipse.osgi [osgi.identity; osgi.identity="org.eclipse.osgi"; type="osgi.bundle"; version:Version="3.10.1.v20141128-1113"; singleton:="true"] and org.apache.geronimo.specs.geronimo-annotation_1.1_spec [osgi.identity; singleton="true"; osgi.identity="org.apache.geronimo.specs.geronimo-annotation_1.1_spec"; type="osgi.bundle"; version:Version="1.0.0"; singleton:="true"] via two dependency chains.
+
+Chain 1:
+  org.eclipse.mylyn.tasks.core [osgi.identity; osgi.identity="org.eclipse.mylyn.tasks.core"; type="osgi.bundle"; version:Version="3.18.0.v20151202-0115"; singleton:="true"]
+    require: (osgi.wiring.bundle=org.eclipse.core.runtime)
+     |
+    provide: osgi.wiring.bundle: org.eclipse.core.runtime
+  org.eclipse.osgi [osgi.identity; osgi.identity="org.eclipse.osgi"; type="osgi.bundle"; version:Version="3.10.1.v20141128-1113"; singleton:="true"]
+
+Chain 2:
+  org.eclipse.mylyn.tasks.core [osgi.identity; osgi.identity="org.eclipse.mylyn.tasks.core"; type="osgi.bundle"; version:Version="3.18.0.v20151202-0115"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=com.google.guava)(bundle-version>=15.0.0))
+     |
+    provide: osgi.wiring.bundle; bundle-version:Version="15.0.0.v201403281430"; osgi.wiring.bundle="com.google.guava"
+  com.google.guava [osgi.identity; osgi.identity="com.google.guava"; type="osgi.bundle"; version:Version="15.0.0.v201403281430"]
+    import: (osgi.wiring.package=javax.annotation)
+     |
+    export: osgi.wiring.package: javax.annotation
+  org.apache.geronimo.specs.geronimo-annotation_1.1_spec [osgi.identity; singleton="true"; osgi.identity="org.apache.geronimo.specs.geronimo-annotation_1.1_spec"; type="osgi.bundle"; version:Version="1.0.0"; singleton:="true"]
+	at org.eclipse.osgi.container.Module.start(Module.java:434)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1582)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1561)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1533)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1476)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:340)
+
+!ENTRY org.eclipse.mylyn.context.tasks.ui 4 0 2018-09-20 09:51:28.085
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.mylyn.context.tasks.ui [611]
+  Unresolved requirement: Require-Bundle: org.eclipse.mylyn.tasks.core; bundle-version="3.8.0"
+    -> Bundle-SymbolicName: org.eclipse.mylyn.tasks.core; bundle-version="3.18.0.v20151202-0115"; singleton:="true"
+       org.eclipse.mylyn.tasks.core [618]
+         No resolution report for the bundle.  Unresolved requirement: Require-Bundle: org.eclipse.mylyn.tasks.ui; bundle-version="3.8.0"
+    -> Bundle-SymbolicName: org.eclipse.mylyn.tasks.ui; bundle-version="3.18.0.v20151211-2235"; singleton:="true"
+       org.eclipse.mylyn.tasks.ui [622]
+         Unresolved requirement: Require-Bundle: org.eclipse.mylyn.tasks.core; bundle-version="3.8.0"
+           -> Bundle-SymbolicName: org.eclipse.mylyn.tasks.core; bundle-version="3.18.0.v20151202-0115"; singleton:="true"
+  Bundle was not resolved because of a uses contraint violation.
+  org.osgi.service.resolver.ResolutionException: Uses constraint violation. Unable to resolve resource org.eclipse.mylyn.context.tasks.ui [osgi.identity; osgi.identity="org.eclipse.mylyn.context.tasks.ui"; type="osgi.bundle"; version:Version="3.18.0.v20151013-1847"; singleton:="true"] because it is exposed to package 'javax.annotation' from resources org.eclipse.osgi [osgi.identity; osgi.identity="org.eclipse.osgi"; type="osgi.bundle"; version:Version="3.10.1.v20141128-1113"; singleton:="true"] and org.apache.geronimo.specs.geronimo-annotation_1.1_spec [osgi.identity; singleton="true"; osgi.identity="org.apache.geronimo.specs.geronimo-annotation_1.1_spec"; type="osgi.bundle"; version:Version="1.0.0"; singleton:="true"] via two dependency chains.
+
+Chain 1:
+  org.eclipse.mylyn.context.tasks.ui [osgi.identity; osgi.identity="org.eclipse.mylyn.context.tasks.ui"; type="osgi.bundle"; version:Version="3.18.0.v20151013-1847"; singleton:="true"]
+    require: (osgi.wiring.bundle=org.eclipse.core.runtime)
+     |
+    provide: osgi.wiring.bundle: org.eclipse.core.runtime
+  org.eclipse.osgi [osgi.identity; osgi.identity="org.eclipse.osgi"; type="osgi.bundle"; version:Version="3.10.1.v20141128-1113"; singleton:="true"]
+
+Chain 2:
+  org.eclipse.mylyn.context.tasks.ui [osgi.identity; osgi.identity="org.eclipse.mylyn.context.tasks.ui"; type="osgi.bundle"; version:Version="3.18.0.v20151013-1847"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=com.google.guava)(bundle-version>=15.0.0))
+     |
+    provide: osgi.wiring.bundle; bundle-version:Version="15.0.0.v201403281430"; osgi.wiring.bundle="com.google.guava"
+  com.google.guava [osgi.identity; osgi.identity="com.google.guava"; type="osgi.bundle"; version:Version="15.0.0.v201403281430"]
+    import: (osgi.wiring.package=javax.annotation)
+     |
+    export: osgi.wiring.package: javax.annotation
+  org.apache.geronimo.specs.geronimo-annotation_1.1_spec [osgi.identity; singleton="true"; osgi.identity="org.apache.geronimo.specs.geronimo-annotation_1.1_spec"; type="osgi.bundle"; version:Version="1.0.0"; singleton:="true"]
+	at org.eclipse.osgi.container.Module.start(Module.java:434)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1582)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1561)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1533)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1476)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:340)
+
+!ENTRY org.eclipse.mylyn.tasks.index.core 4 0 2018-09-20 09:51:28.099
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.mylyn.tasks.index.core [619]
+  Unresolved requirement: Require-Bundle: org.eclipse.mylyn.tasks.core; bundle-version="3.8.0"
+    -> Bundle-SymbolicName: org.eclipse.mylyn.tasks.core; bundle-version="3.18.0.v20151202-0115"; singleton:="true"
+       org.eclipse.mylyn.tasks.core [618]
+         No resolution report for the bundle.  Bundle was not resolved because of a uses contraint violation.
+  org.osgi.service.resolver.ResolutionException: Uses constraint violation. Unable to resolve resource org.eclipse.mylyn.tasks.core [osgi.identity; osgi.identity="org.eclipse.mylyn.tasks.core"; type="osgi.bundle"; version:Version="3.18.0.v20151202-0115"; singleton:="true"] because it is exposed to package 'javax.annotation' from resources org.eclipse.osgi [osgi.identity; osgi.identity="org.eclipse.osgi"; type="osgi.bundle"; version:Version="3.10.1.v20141128-1113"; singleton:="true"] and org.apache.geronimo.specs.geronimo-annotation_1.1_spec [osgi.identity; singleton="true"; osgi.identity="org.apache.geronimo.specs.geronimo-annotation_1.1_spec"; type="osgi.bundle"; version:Version="1.0.0"; singleton:="true"] via two dependency chains.
+
+Chain 1:
+  org.eclipse.mylyn.tasks.core [osgi.identity; osgi.identity="org.eclipse.mylyn.tasks.core"; type="osgi.bundle"; version:Version="3.18.0.v20151202-0115"; singleton:="true"]
+    require: (osgi.wiring.bundle=org.eclipse.core.runtime)
+     |
+    provide: osgi.wiring.bundle: org.eclipse.core.runtime
+  org.eclipse.osgi [osgi.identity; osgi.identity="org.eclipse.osgi"; type="osgi.bundle"; version:Version="3.10.1.v20141128-1113"; singleton:="true"]
+
+Chain 2:
+  org.eclipse.mylyn.tasks.core [osgi.identity; osgi.identity="org.eclipse.mylyn.tasks.core"; type="osgi.bundle"; version:Version="3.18.0.v20151202-0115"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=com.google.guava)(bundle-version>=15.0.0))
+     |
+    provide: osgi.wiring.bundle; bundle-version:Version="15.0.0.v201403281430"; osgi.wiring.bundle="com.google.guava"
+  com.google.guava [osgi.identity; osgi.identity="com.google.guava"; type="osgi.bundle"; version:Version="15.0.0.v201403281430"]
+    import: (osgi.wiring.package=javax.annotation)
+     |
+    export: osgi.wiring.package: javax.annotation
+  org.apache.geronimo.specs.geronimo-annotation_1.1_spec [osgi.identity; singleton="true"; osgi.identity="org.apache.geronimo.specs.geronimo-annotation_1.1_spec"; type="osgi.bundle"; version:Version="1.0.0"; singleton:="true"]
+	at org.eclipse.osgi.container.Module.start(Module.java:434)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1582)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1561)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1533)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1476)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:340)
+
+!ENTRY org.eclipse.mylyn.tasks.ui 4 0 2018-09-20 09:51:28.138
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.mylyn.tasks.ui [622]
+  Unresolved requirement: Require-Bundle: org.eclipse.mylyn.tasks.core; bundle-version="3.8.0"
+    -> Bundle-SymbolicName: org.eclipse.mylyn.tasks.core; bundle-version="3.18.0.v20151202-0115"; singleton:="true"
+       org.eclipse.mylyn.tasks.core [618]
+         No resolution report for the bundle.  Bundle was not resolved because of a uses contraint violation.
+  org.osgi.service.resolver.ResolutionException: Uses constraint violation. Unable to resolve resource org.eclipse.mylyn.tasks.ui [osgi.identity; osgi.identity="org.eclipse.mylyn.tasks.ui"; type="osgi.bundle"; version:Version="3.18.0.v20151211-2235"; singleton:="true"] because it is exposed to package 'javax.annotation' from resources org.eclipse.osgi [osgi.identity; osgi.identity="org.eclipse.osgi"; type="osgi.bundle"; version:Version="3.10.1.v20141128-1113"; singleton:="true"] and org.apache.geronimo.specs.geronimo-annotation_1.1_spec [osgi.identity; singleton="true"; osgi.identity="org.apache.geronimo.specs.geronimo-annotation_1.1_spec"; type="osgi.bundle"; version:Version="1.0.0"; singleton:="true"] via two dependency chains.
+
+Chain 1:
+  org.eclipse.mylyn.tasks.ui [osgi.identity; osgi.identity="org.eclipse.mylyn.tasks.ui"; type="osgi.bundle"; version:Version="3.18.0.v20151211-2235"; singleton:="true"]
+    require: (osgi.wiring.bundle=org.eclipse.core.runtime)
+     |
+    provide: osgi.wiring.bundle: org.eclipse.core.runtime
+  org.eclipse.osgi [osgi.identity; osgi.identity="org.eclipse.osgi"; type="osgi.bundle"; version:Version="3.10.1.v20141128-1113"; singleton:="true"]
+
+Chain 2:
+  org.eclipse.mylyn.tasks.ui [osgi.identity; osgi.identity="org.eclipse.mylyn.tasks.ui"; type="osgi.bundle"; version:Version="3.18.0.v20151211-2235"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=com.google.guava)(bundle-version>=15.0.0))
+     |
+    provide: osgi.wiring.bundle; bundle-version:Version="15.0.0.v201403281430"; osgi.wiring.bundle="com.google.guava"
+  com.google.guava [osgi.identity; osgi.identity="com.google.guava"; type="osgi.bundle"; version:Version="15.0.0.v201403281430"]
+    import: (osgi.wiring.package=javax.annotation)
+     |
+    export: osgi.wiring.package: javax.annotation
+  org.apache.geronimo.specs.geronimo-annotation_1.1_spec [osgi.identity; singleton="true"; osgi.identity="org.apache.geronimo.specs.geronimo-annotation_1.1_spec"; type="osgi.bundle"; version:Version="1.0.0"; singleton:="true"]
+	at org.eclipse.osgi.container.Module.start(Module.java:434)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1582)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1561)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1533)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1476)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:340)
+
+!ENTRY org.eclipse.mylyn.team.ui 4 0 2018-09-20 09:51:28.166
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.mylyn.team.ui [623]
+  Unresolved requirement: Require-Bundle: org.eclipse.mylyn.tasks.core; bundle-version="[3.8.0,4.0.0)"
+    -> Bundle-SymbolicName: org.eclipse.mylyn.tasks.core; bundle-version="3.18.0.v20151202-0115"; singleton:="true"
+       org.eclipse.mylyn.tasks.core [618]
+         No resolution report for the bundle.  Unresolved requirement: Require-Bundle: org.eclipse.mylyn.tasks.ui; bundle-version="[3.8.0,4.0.0)"
+    -> Bundle-SymbolicName: org.eclipse.mylyn.tasks.ui; bundle-version="3.18.0.v20151211-2235"; singleton:="true"
+       org.eclipse.mylyn.tasks.ui [622]
+         Unresolved requirement: Require-Bundle: org.eclipse.mylyn.tasks.core; bundle-version="3.8.0"
+           -> Bundle-SymbolicName: org.eclipse.mylyn.tasks.core; bundle-version="3.18.0.v20151202-0115"; singleton:="true"
+  Bundle was not resolved because of a uses contraint violation.
+  org.osgi.service.resolver.ResolutionException: Uses constraint violation. Unable to resolve resource org.eclipse.mylyn.tasks.core [osgi.identity; osgi.identity="org.eclipse.mylyn.tasks.core"; type="osgi.bundle"; version:Version="3.18.0.v20151202-0115"; singleton:="true"] because it is exposed to package 'javax.annotation' from resources org.eclipse.osgi [osgi.identity; osgi.identity="org.eclipse.osgi"; type="osgi.bundle"; version:Version="3.10.1.v20141128-1113"; singleton:="true"] and org.apache.geronimo.specs.geronimo-annotation_1.1_spec [osgi.identity; singleton="true"; osgi.identity="org.apache.geronimo.specs.geronimo-annotation_1.1_spec"; type="osgi.bundle"; version:Version="1.0.0"; singleton:="true"] via two dependency chains.
+
+Chain 1:
+  org.eclipse.mylyn.tasks.core [osgi.identity; osgi.identity="org.eclipse.mylyn.tasks.core"; type="osgi.bundle"; version:Version="3.18.0.v20151202-0115"; singleton:="true"]
+    require: (osgi.wiring.bundle=org.eclipse.core.runtime)
+     |
+    provide: osgi.wiring.bundle: org.eclipse.core.runtime
+  org.eclipse.osgi [osgi.identity; osgi.identity="org.eclipse.osgi"; type="osgi.bundle"; version:Version="3.10.1.v20141128-1113"; singleton:="true"]
+
+Chain 2:
+  org.eclipse.mylyn.tasks.core [osgi.identity; osgi.identity="org.eclipse.mylyn.tasks.core"; type="osgi.bundle"; version:Version="3.18.0.v20151202-0115"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=com.google.guava)(bundle-version>=15.0.0))
+     |
+    provide: osgi.wiring.bundle; bundle-version:Version="15.0.0.v201403281430"; osgi.wiring.bundle="com.google.guava"
+  com.google.guava [osgi.identity; osgi.identity="com.google.guava"; type="osgi.bundle"; version:Version="15.0.0.v201403281430"]
+    import: (osgi.wiring.package=javax.annotation)
+     |
+    export: osgi.wiring.package: javax.annotation
+  org.apache.geronimo.specs.geronimo-annotation_1.1_spec [osgi.identity; singleton="true"; osgi.identity="org.apache.geronimo.specs.geronimo-annotation_1.1_spec"; type="osgi.bundle"; version:Version="1.0.0"; singleton:="true"]
+	at org.eclipse.osgi.container.Module.start(Module.java:434)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1582)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1561)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1533)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1476)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:340)
